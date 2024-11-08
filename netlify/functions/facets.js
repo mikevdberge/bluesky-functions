@@ -1,5 +1,7 @@
 exports.handler = async (event, context) => {
     if (!event.body || event.httpMethod !== 'POST') {
+      console.log("Invalid request body: ",event.body);
+      console.log("Invald HTTP Method:", event.httpMethod);
         return {
           statusCode: 400,
           headers: {
