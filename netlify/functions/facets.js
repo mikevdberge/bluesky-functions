@@ -18,7 +18,7 @@ exports.handler = async (event, context) => {
     
       if (!data.text) {
         console.error('Required information is missing.')
-    
+        console.log("Invalid request body: ",event.body);
         return {
           statusCode: 400,
           headers: {
