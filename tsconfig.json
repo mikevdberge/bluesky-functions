@@ -1,13 +1,17 @@
 {
-    "compilerOptions": { 
-      "target": "es6", 
-      "module": "commonjs",
-      "strict": true, 
-      "declaration": false,
-      "outDir": "./netlify/functions"
-    },
-    "exclude": [
-        "node_modules",
-        "netlify"
-    ]
-  }
+  "compilerOptions": { 
+    "target": "es6", 
+    "module": "commonjs",
+    "strict": true, 
+    "declaration": false,
+    "outDir": "./netlify/functions",
+    "allowJs": true
+  },
+  "exclude": [
+      "node_modules"
+  ],
+  //.
+  "include": [
+    "./netlify/functions"
+  ],  
+}
