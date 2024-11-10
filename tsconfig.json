@@ -5,13 +5,17 @@
     "strict": true, 
     "declaration": false,
     "outDir": "./netlify/functions",
-    "allowJs": true
+    "allowJs": true,
+    "esModuleInterop": true,
+    "isolatedModules": true ,
+    "noEmit": true
+
   },
   "exclude": [
       "node_modules"
   ],
   //.
   "include": [
-    "./netlify/functions"
+    "./src"
   ],  
 }
