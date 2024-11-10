@@ -1,4 +1,5 @@
 import { HandlerEvent } from '@netlify/functions'
+import TLDs from 'tlds'
 import { AppBskyRichtextFacet } from '@atproto/api'
 
 type Facet = AppBskyRichtextFacet.Main
@@ -109,4 +110,14 @@ class UnicodeString {
   utf16IndexToUtf8Index(i: number) {
     return encoder.encode(this.utf16.slice(0, i)).byteLength
   }
+}
+
+function isValidDomain(str: string): boolean {
+  return !!TLDs.find((tld) => {
+    const i = str.lastIndexOf(tld)
+    if (i === -1) {
+      return false
+    }
+    return str.charAt(i - 1) === '.' && i === str.length - tld.length
+  })
 }
