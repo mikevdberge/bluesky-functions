@@ -3,5 +3,14 @@
     "version": "1.0.0",
     "description": "Based on the provided message text the API will provde the Blue",
     "author": "Mike van den Berge",
-    "license": "ISC"
+    "license": "ISC",
+    "scripts": {
+        "build": "tsc"
+    },    
+    "dependencies": {
+        "@netlify/functions": "^2.8.2",
+        "@types/aws-lambda": "^8.10.75",
+        "typescript": "^4.2.4",
+        "@atproto/api": "^0.13.15"    
+    }
 }

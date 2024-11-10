@@ -1,21 +1,22 @@
-import TLDs from 'tlds'
-import { AppBskyRichtextFacet } from '@atproto/api'
+import { Handler } from '@netlify/functions'
 
-exports.handler = async (event, context) => {
+const handler: Handler = async (event, context) => {
+//exports.handler = async (event, context) => {
+
     if (!event.body || event.httpMethod !== 'POST') {
       console.log("Invalid request body: ",event.body);
       console.log("Invald HTTP Method:", event.httpMethod);
-        return {
-          statusCode: 400,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'Content-Type'
-          },
-          body: JSON.stringify({
-            status: 'invalid-method'
-          })
-        }
+      return {
+        statusCode: 400,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Headers': 'Content-Type'
+        },
+        body: JSON.stringify({
+          status: 'invalid-method'
+        })
       }
+    }
     
       const data = JSON.parse(event.body)
     
