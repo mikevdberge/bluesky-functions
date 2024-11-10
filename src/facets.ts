@@ -1,4 +1,10 @@
 import { HandlerEvent } from '@netlify/functions'
+import { AppBskyRichtextFacet } from '@atproto/api'
+
+type Facet = AppBskyRichtextFacet.Main
+
+const encoder = new TextEncoder()
+const decoder = new TextDecoder()
 
 export const handler = async (event: HandlerEvent) => {
 //exports.handler = async (event, context) => {
